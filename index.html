@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap" rel="stylesheet">
+    <link href="all.css" rel="stylesheet">
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <header>
+        <div id="navBar">
+            <div id="name">
+                <button class="btn" type="button" onclick="optionsToggle()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div id="compName">Checo´s</div>
+            </div>
+            <ul id="lSide">
+                <button class="btn lSideBtn" type="button">FAQ</button>
+                <button class="btn lSideBtn" type="button">Local stores</button>
+                <button class="btn lSideBtn" type="button">Contact us</button>
+            </ul>
+            <ul id="rSide">
+                <button class="btn" id="cart" type="button" onclick="showCart()">
+                    <i class="fas fa-cart-plus"></i>
+                    <div id="totalAmount"></div>
+                </button>
+                <button class="btn" type="button" id="themeSwitch" onclick="sendThemeToDb()">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="container">
+                <button class="mainBtn" type="button">
+                    <div class="mainBtnInfo">
+                        Basic plan
+                        <ul>
+                            <li>Full acess to your selected gym and equipements</li>
+                            <li>Breakfeast</li>
+                            <li>Personal trainer</li>
+                        </ul>
+                    </div>
+                </button>
+                <button class="mainBtn" type="button">
+                    <div class="mainBtnInfo">
+                        Premium plan
+                        <ul>
+                            <li>All basic plan features</li>
+                            <li>+</li>
+                            <li>Acess to all gym´s availeable in your country</li>
+                            <li>You can bring your friends</li>
+                            <li>Spa and massage</li>
+                        </ul>
+                    </div>
+                </button>
+            <div id="items">
+                <button class="mainBtn itemsBtn" type="button">
+                    <div class="mainBtnInfo itemsBtn" value="Watter Bottle" data-price="9.99" type="button" onclick="sendItemsToDb(this)">
+                        Water Bottle
+                        <ul>
+                            <li>$9.99</li>
+                        </ul>
+                    </div>
+                </button>
+                <button class="mainBtn itemsBtn" value="Gloves" data-price="16.99" type="button" onclick="sendItemsToDb(this)">
+                    <div class="mainBtnInfo">
+                        Gloves
+                        <ul>
+                            <li>$16.99</li>
+                        </ul>
+                    </div>
+                </button>
+                <button class="mainBtn itemsBtn" value="Wheight" data-price="20.99" type="button" onclick="sendItemsToDb(this)">
+                    <div class="mainBtnInfo">
+                        Weight
+                        <ul>
+                            <li>$20.99</li>
+                        </ul>
+                    </div>
+                </button>
+                <button class="mainBtn itemsBtn" value="Shoes" data-price="23.50" type="button" onclick="sendItemsToDb(this)">
+                    <div class="mainBtnInfo">
+                        Shoes
+                        <ul>
+                            <li>$23.50</li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="foot">
+            <div id="social">
+                <button class="btn">
+                    <i class="fab fa-instagram"></i>
+                </button>
+                <button class="btn">
+                    <i class="fab fa-facebook"></i>
+                </button>
+                <button class="btn">
+                    <i class="fab fa-twitter"></i>
+                </button>
+            </div>
+            <div id="rights">All rights reserved by Gabriel Pacheco</div>
+        </div>
+    </footer>
+    <div id="cartPage">
+        <button id="cartPageBtn" type="button" onclick="closeCart()">X</button>
+        <div id="cartItems"></div>
+        <div id="totalPrice">
+            <div id="p"></div>
+            <div id="warning"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
