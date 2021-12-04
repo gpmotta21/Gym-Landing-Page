@@ -6,13 +6,20 @@ html, body{
 
 body{
     display: flex;
-    flex-direction: column;
-    font-family: 'Shippori Antique', sans-serif;
-    transition: all .2s;
-    z-index: -1;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
     background: var(--main);
     color: var(--fontColor);
+    font-family: 'Shippori Antique', sans-serif;
+    transition: all .2s;
 }
+
+ul, li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+} 
 
 .lightTheme {
     --main:#f8f8f8;
@@ -26,43 +33,58 @@ body{
     --darkerMain: rgba(9, 9, 9, 0.981);
     --fontColor:#D2CCA1;
     --invertedFont: #222;
-  }
-
-ul, li{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-} 
-
-header{
-    display: flex;
-    justify-content: center;
-    height: 10%;
 }
 
+header, footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    gap: 5%;
+    width: 80%;
+    height: 6%;
+    border-bottom: var(--fontColor) solid 2px;
+    position: relative;
+}
+
+main{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 5%;
+    width: 90%;
+    height: 80%;
+    position: relative;
+}
 
 footer{
     display: flex;
-    height: 10%;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 6%;
+    border-top: var(--fontColor) solid 2px;
+}
+
+button:hover{cursor: pointer;}
+
+button{
+    font-family: 'Shippori Antique', sans-serif;
+    font-size: 2vmin;
+    background: none;
+    border: none;
+    position: relative;
+    transition: all .5s;
+    color: var(--text)
 }
 
 /* NAVBAR */
 
-#navBar{
-    display: flex;
-    width: 80%;
-    position: relative;
-    border-bottom: var(--fontColor) solid 2px;
-    font-size: 20px;
-}
-
-#navBar *{
+header *{
     gap: 10%;
     align-items: center;
 }
-
-#navBar{gap: 3%;}
 
 #name{display: flex;}
 
@@ -85,7 +107,7 @@ footer{
     width: 100%;
     transform: scale(0,1);
     transition: all .5s ease-in-out;
-    background: lightpink;
+    background: var(--fontColor);;
 }
 
 .lSideBtn:hover::before{ transform: scale(1,1); }
@@ -112,21 +134,7 @@ footer{
 
 #navBar button{height: 70%;}
 
-button{
-    font-family: 'Shippori Antique', sans-serif;
-    font-size: 2vmin;
-    background: none;
-    border: none;
-    position: relative;
-    transition: all .5s;
-    color: var(--text)
-}
-
 #rSide button{font-size: 20px;}
-
-button:hover{ 
-    cursor: pointer;
-}
 
 #rSide button:hover, footer button:hover{
     color: brown !important;
@@ -140,42 +148,7 @@ button:hover{
 .btnToggle{transform: rotate(0) !important;}
 .navBarToggle{max-height: 7rem !important;} /* Added in Js */
 
-/* FOOTER */
-
-#foot{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    border-top: var(--fontColor) solid 2px;
-}
-
-#social{
-    display: flex;
-    gap: 20%;
-    width: 50%;
-}
-
-footer button{
-    font-size: 3vmin;
-}
-
 /* MAIN */ 
-
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-}
-
-#container{
-    display: grid;
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-    gap: 5%;
-    width: 90%;
-    height: 90%;
-}
 
 .mainBtn{
     position: relative;
@@ -190,7 +163,7 @@ main{
 
 .mainBtn:first-child{background-image: url(img/photo-1540497077202-7c8a3999166f.jpg);}
 .mainBtn:nth-child(2){background-image: url(img/photo-1540496905036-5937c10647cc.jpg);}
-#items .mainBtn:first-child{background-image: url(img/water\ bottle.png);}
+#items .mainBtn{background-image: url(img/water\ bottle.png);}
 #items .mainBtn:nth-child(2){background-image: url(img/glove.png);}
 #items .mainBtn:nth-child(3){background-image: url(img/weight.png);}
 #items .mainBtn:nth-child(4){background-image: url(img/tenis.png);}
@@ -198,21 +171,20 @@ main{
 
 .mainBtnInfo{
     position: absolute;
-    left: 0%;
-    top: 80%;
     width: 100%;
-    transition: all .5s;
-    font-size: 2.3vmin;
+    left: 0%;
+    top: 75%;
     z-index: 1;
     background: var(--fontColor);
     color: var(--invertedFont);
+    font-size: 2.3vmin;
+    transition: all .5s;
 }
 
 .mainBtn:hover > .mainBtnInfo{
     top: 50%;
     transform: translate(0, -50%);
 }
-
 
 .mainBtn ul{
     max-height: 0;
@@ -238,6 +210,7 @@ main{
     justify-content: space-evenly;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.227);
+    border: var(--fontColor) solid 1px;
     border-radius: 5px;
 }
 
@@ -248,6 +221,19 @@ main{
 }
 
 #items .mainBtnInfo{ border-radius: 5px; }
+
+/* FOOTER */
+
+#social{
+    display: flex;
+    gap: 20%;
+    width: 50%;
+}
+
+footer button{font-size: 3vmin;}
+
+
+#rights{font-size: 2vmin;}
 
 /* CART PAGE */
 
@@ -263,7 +249,7 @@ main{
     width: 90%;
     height: 90%;
     opacity: 0;
-    z-index: 1;
+    z-index: 3;
     transition: all .5s ease-in-out;
     background-color: var(--darkerMain);
     border: solid 2px var(--fontColor);
@@ -294,16 +280,17 @@ main{
 /* Product, item and amount are elements created by JavaScript */
 .product{
     display: flex;
+    align-items: center;
+    padding: 5px;
     border-radius: 10px;
     background-color: var(--invertedFont);
     border: 2px solid var(--fontColor);
-    padding: 5px;
-
 }
 
 .item, .amount{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 50%;
 }
 
@@ -315,9 +302,7 @@ main{
     gap: 20%;
 }
 
-.amount button{
-    font-size: 3vmin;
-}
+.amount button{font-size: 3vmin;}
 
 #totalPrice{
     display: flex;
@@ -349,52 +334,59 @@ main{
 
 
 @media (max-width: 640px){
+    
+    /* FONT SIZE */
+
+    .mainBtnInfo, .mainBtnInfo ul{font-size: 3vmin;}
+    #cartItems{font-size: 2.5vmin;}
+    #cartItems button{font-size: 4vmin;}
+    #lSide button{font-size: 2.5vmin;}
+
+    /* MAIN ADJUSTMENTS */
 
     body{
         height: 130vh;
     }
 
-    #name{width: 40%;    }
+    main{ height: 80%;
+    }
+
+    main{
+        grid-template: repeat(3, 1fr) / repeat(1, 1fr);
+        gap: 2%;
+    }
+
+    #name{width: 40%;}
     
     #name button {display: initial;    }
     
     #lSide{
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         max-height: 0;
-        height: 7rem;
+        height: 7em;
         top: 100%;
-        gap: 20%;
+        left: 0;
         overflow: hidden;
         position: absolute; 
         transition: all .5s;
-        z-index: 1;
-        background-color: var(--invertedFont);
+        z-index: 2;
+        background-color: var(--main);
         border-left: var(--fontColor) solid 2px;
         border-bottom: var(--fontColor) solid 2px;
         border-right: var(--fontColor) solid 2px;
-        border-radius: 5px;
+        border-radius: 0 0 5px 5px;
     }
 
-    #lSide button{width: 50%;}
-
-    main{
-        height: 95%;
+    #lSide button{
+        width: 100%;
+        height: 25%;
     }
 
-    #container{
-        grid-template: repeat(3, 1fr) / repeat(1, 1fr);
-        gap: 2%;
-        height: 95%;
-    }
+    #items{grid-column: span 1;    }
 
-    #items{
-        grid-column: span 1;
-    }
-
-    #items .mainBtn{
-        min-width: 40%;
-    }
+    #items .mainBtn{min-width: 40%;}
 
     #cartPage{
         flex-direction: column;
@@ -407,9 +399,7 @@ main{
         height: 70%;
     }
 
-    #totalPrice{
-        height: 30%;
-    }
+    #totalPrice{height: 30%;}
 
     #p{
         width: 70%;

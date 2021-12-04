@@ -164,7 +164,7 @@ function closeCart() {
 // In this function, the value of the current theme will be sent to de local storage
 // d stands for 'default' and e stands for 'eneabled'
 function sendThemeToDb() {
-    var theme = getTheme();
+    var theme = getTheme()
 
     if (theme == 'd') {
         theme = 'e';
@@ -180,4 +180,4 @@ function sendThemeToDb() {
 function lightToggle() {showOnScreen()}
 
 showOnScreen()
-lightToggle();
+lightToggle()
