@@ -7,7 +7,7 @@ html, body{
 body{
     display: flex;
     flex-direction: column; 
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background: var(--main);
     color: var(--fontColor);
@@ -21,6 +21,7 @@ ul, li{
     margin: 0;
 } 
 
+/* Color pallets for themes chosen by the user */
 .lightTheme {
     --main:#f8f8f8;
     --darkerMain: rgba(228, 228, 228, 0.96);
@@ -136,13 +137,11 @@ header *{
 
 #rSide button{font-size: 20px;}
 
+footer button{ padding: 0;}
+
 #rSide button:hover, footer button:hover{
     color: brown !important;
     transform: scale(1.5);
-}
-
-#container .mainBtn{
-    box-shadow: 5px 6px 5px -1px rgba(0,0,0,0.74);
 }
 
 .btnToggle{transform: rotate(0) !important;}
@@ -150,6 +149,7 @@ header *{
 
 /* MAIN */ 
 
+/* Container with Plan informations */
 .mainBtn{
     position: relative;
     padding: 0;
@@ -159,6 +159,7 @@ header *{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    box-shadow: 5px 6px 5px -1px rgba(0,0,0,0.74);
 }
 
 .mainBtn:first-child{background-image: url(img/photo-1540497077202-7c8a3999166f.jpg);}
@@ -202,6 +203,7 @@ header *{
     max-height: 10rem;
 }
 
+/* Container with products */
 #items{
     grid-column: span 2;
     display: flex;
@@ -337,10 +339,11 @@ footer button{font-size: 3vmin;}
     
     /* FONT SIZE */
 
+    #lSide button, #lSide button{font-size: 2.5vmin;}
+    #rSide button{font-size: 2.5vmin;}
     .mainBtnInfo, .mainBtnInfo ul{font-size: 3vmin;}
     #cartItems{font-size: 2.5vmin;}
     #cartItems button{font-size: 4vmin;}
-    #lSide button{font-size: 2.5vmin;}
 
     /* MAIN ADJUSTMENTS */
 

@@ -174,10 +174,7 @@ function sendThemeToDb() {
         theme = 'd'
         setTheme(theme);
     }
-    lightToggle();
+    showOnScreen()
 }
 
-function lightToggle() {showOnScreen()}
-
 showOnScreen()
-lightToggle()
